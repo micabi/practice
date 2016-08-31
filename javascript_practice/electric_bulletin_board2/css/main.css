@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+#board-wrapper{
+	width: 300px;
+	height: 25px;
+	box-sizing: border-box;
+	border: 1px solid #333;
+	background-color: #000;
+	overflow: hidden;
+}
+
+#board{
+	height: 25px;
+	background-color: #000;
+	color: #f00;
+	white-space: nowrap;
+}
+
+#board p{
+	width: 300%;
+	line-height: 25px;
+	padding: 0;
+}

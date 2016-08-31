@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<title>電光掲示板</title>
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<h1>電光掲示板</h1>
+	<ul>使用する関数
+		<li>setInterval(関数, ミリ秒);・・・一定期間ごとに処理を実行</li>
+		<li>substring(開始文字位置, 終了文字位置);・・・文字列を切り出す</li>
+	</ul>
+	<form name="board">
+		<input type="text" name="mytext" readonly="readonly" value="" />
+	</form>
+
+	<pre>
+	window.addEventListener("load", function(){
+
+		var msg = "これはテストメッセージです。";
+
+		setInterval(abc, 500);
+
+		function abc(){
+			msg = msg.substring(<span class="mark">3</span>, msg.length) + msg.substring(0, <span class="mark">3</span>); // 4文字目から最後まで + 0文字目から4文字目まで
+			document.board.mytext.value = msg;
+		}
+
+	}, false);
+	</pre>
+</body>
+</html>

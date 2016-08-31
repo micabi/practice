@@ -1,0 +1,303 @@
+﻿/* charset */
+@charset "UTF-8";
+
+h1{
+	padding-left: 10px;
+	border-left: 15px solid #00896e;
+}
+
+pre{
+	width:90%;
+	max-width: 1260px;
+	min-width:600px;
+	overflow: scroll;
+	background-color:#CCCCCC;
+	padding:10px 10px;
+	border:1px solid #666666;
+}
+
+span.mark{
+	background-color:yellow;
+			}
+
+span.mark_pink{
+	background-color:pink;
+}
+
+span.mark_blue{
+	background-color:blue;
+}
+
+.result{
+	width:90%;
+	max-width: 1260px;
+	min-width:600px;
+	background: #ffffff;
+	padding:10px 10px;
+	border:1px solid red;
+	}
+
+ul li{
+	margin-bottom:10px;
+	}
+
+ol li{
+	margin-bottom:10px;
+	}
+
+table{
+	border:1px solid #000000;
+			}
+
+table tr td{
+	padding:5px;
+	border:1px solid #000000;
+			}
+
+/****************************
+もっと読む
+****************************/
+
+#read-more{
+	width:200px;
+	height:40px;
+	color:#fff;
+	background-color:#ee519d;
+	text-align:center;
+	line-height:40px;
+	font-size:14px;
+			}
+
+#read-more a{
+	display:block;
+	width:200px;
+	height:40px;
+	color:#fff;
+	text-decoration:none;
+			}
+
+#return{
+	width:200px;
+	height:40px;
+	color:#fff;
+	background-color:#00FF02;
+	line-height:40px;
+	font-size:14px;
+	text-align:center;
+	display:none;
+		}
+
+#return a{
+	display:block;
+	width:200px;
+	height:40px;
+	color:#fff;
+	text-decoration:none;
+		}
+
+#more-text{
+	display:none;
+	background-color:#ccc;
+			}
+
+/***************************
+	タブの切り替え
+****************************/
+
+.steps{
+  padding: 50px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.steps-heading{
+  text-align: center;
+  font-weight: 200;
+  font-size: 40px;
+  color: #204056;
+  margin-bottom: 30px;
+}
+
+.explain{
+  padding-top: 50px;
+}
+
+.steps ul{
+  width: 350px;
+  height: 50px;
+  margin: auto;
+  list-style:none;
+}
+
+.steps li{
+  float: left;
+  background-color: rgb(53, 170, 165);
+  color: white;
+  padding: 15px 30px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.steps li:hover{
+  background-color: rgb(54, 177, 172);
+}
+
+.steps li.active{
+  background-color: rgb(67, 216, 210);
+  color: white;
+}
+
+.image-part{
+  float: left;
+  padding-left: 100px;
+}
+
+.image-part img{
+  width: 500px;
+  border: 1px solid gray;
+}
+
+.explain-part{
+  float: left;
+  margin-left: 60px;
+  font-size: 1.2em;
+}
+
+.explain-part h2{
+  margin: 50px 0;
+}
+
+.explain{
+  display: none;
+}
+
+.explain.active{
+  display: block;
+  border: dotted 1px #000;
+  overflow:hidden;
+}
+
+/******************************************
+	モーダルウィンドウ
+******************************************/
+
+.header-menu{ /* お問い合せボタン */
+	width:200px;
+	height:40px;
+	background-color:#ccc;
+	color:#fff;
+	font-size:14px;
+	text-align:center;
+	line-height:40px;
+	cursor:pointer;
+			}
+
+
+#modal-contact{ /* モーダルの黒画面 */
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0; /* 全ての方向に0を指定して全画面 */
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 100;
+	display: none;
+}
+
+.contact{ /* コンタクトの白画面 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top:-250px;
+  margin-left:-300px;
+  background-color: white;
+  padding: 50px 0;
+  border-radius: 10px;
+  width: 600px;
+  height: 500px;
+  text-align: center;
+		}
+
+#close-contact{ /* 閉じるボタン */
+  display:block;
+  width:80px;
+  height:20px;
+  position:absolute;
+  top:10px;
+  right:10px;
+  font-size:14px;
+  color:#fff;
+  background-color:#FF7A23;
+  line-height:20px;
+  cursor:pointer;
+			}
+
+.contact h2{
+  color: rgb(75, 75, 75);
+			}
+
+.fa-times{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+.contact input{
+  width: 400px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.contact textarea{
+  width: 400px;
+  height: 200px;
+  margin: auto;
+}
+
+#submit-btn{
+  display: inline-block;
+  padding: 15px 60px;
+  background-color: rgba(26, 188, 156, 1);
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.thanks-msg{
+  font-size: 20px;
+}
+
+div{
+	width: 300px;
+	height: 300px;
+}
+
+#div1{
+	background-color: red;
+}
+
+#div2{
+	background-color: blue;
+	position: relative;
+	right: -5000px;
+}
+
+#div3{
+	background-color: yellow;
+	position: relative;
+	left: -1000px;
+}
+
+#div4{
+	background-color: purple;
+	position: relative;
+	right: -5000px;
+}
+
+#content{
+	height: auto;
+}

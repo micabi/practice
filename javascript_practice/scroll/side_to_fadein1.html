@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript" >
+	<title>横からフェードイン1｜jQueryの学習</title>
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+<script type="text/JavaScript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/JavaScript" src="js/slide_to_fadein1.js"></script>
+</head>
+<body>
+<h1>横からフェードイン1</h1>
+<p>div2、div3、div4の各Y座標をwindowの底辺座標が通過した時にアニメーションを発生させる。</p>
+	<div id="div1"></div>
+	<div id="div2"></div>
+	<div id="div3"></div>
+	<div id="div4"></div>
+	<div id="content">
+<pre>
+$(window).scroll(function () { // スクロールしたら
+console.log(this); // window
+console.log($(this).scrollTop()); // windowのスクロール量Y軸
+console.log($(window).height()); // windowの高さ
+console.log($("div").eq(1).offset().top); // #div2のY座標
+
+var windowBottom = <span class="mark">$(this).scrollTop() + $(window).height() - 100</span>; // windowのスクロール量 + windowの高さ - 100
+	var div2Top = $("div").eq(1).offset().top; // #div2のY座標
+	var div3Top = $("div").eq(2).offset().top; // #div3のY座標
+	var div4Top = $("div").eq(3).offset().top; // #div4のY座標
+
+	if (div2Top &lt;= windowBottom) {
+		$("div").eq(1).animate({"right" : 0}, 1500);
+	}
+
+	if (div3Top &lt;= windowBottom) {
+		$("div").eq(2).animate({"left" : 0}, 1000);
+	}
+
+	if (div4Top &lt;= windowBottom) {
+		$("div").eq(3).animate({"right" : 0}, "normal");
+	}
+});
+</pre>
+
+</div>
+<p>
+windowの底辺Y座標はwindowの高さそのものである。<br />
+<strong>$(window).height()</strong><br />
+<br />
+スクロールするとスクロール量分ずつwindowの底辺座標もプラスされていく。<br />
+<strong>$(window).scrollTop() + $(window).height()</strong>
+</p>
+<p>animate();関数の使い方は<a href="#">こちら</a></p>
+<br /><br />
+<p><a href="index.html">インデックスに戻る</a></p><br /><br />
+
+</body>
+</html>

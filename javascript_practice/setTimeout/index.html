@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<title>setTimeout</title>
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<h2>setTimeout();関数</h2>
+	<pre>
+	setTimeout(function(){
+	処理, 2000});
+
+	処置を2,000ミリ秒後に実行する。
+	</pre>
+
+	<p>setTimeout();関数は何秒後かに処理を行う（遅らせる）関数である。<br />
+		このサンプルでは2秒後にアラートを出す処理を実行している。<br /><br />
+		※この関数は返り値としてタイマーIDを返す。<br />
+	それを変数に格納してやって、clearTimeout();関数の引数に渡してやればタイマーが解除できる。<br />
+	タイマー解除が必要なければ返り値を変数に格納する必要はない。</p>
+
+	<form>
+		<input type="button" value="タイマー開始" id="start" />
+		<input type="button" value="タイマー終了" id="end" />
+	</form>
+
+	<output></output><br />
+	<output></output>
+
+	<pre>
+	&lt;form&gt;
+	&lt;input type=&quot;button&quot; value=&quot;&#12479;&#12452;&#12510;&#12540;&#38283;&#22987;&quot; id=&quot;start&quot; /&gt;
+	&lt;input type=&quot;button&quot; value=&quot;&#12479;&#12452;&#12510;&#12540;&#32066;&#20102;&quot; id=&quot;end&quot; /&gt;&#13;&#10;&Tab;&Tab;&lt;/form&gt;
+
+	&lt;output&gt;&lt;/output&gt;&lt;br /&gt;
+	&lt;output&gt;&lt;/output&gt;
+
+	window.onload = function(){
+		var out = document.getElementsByTagName('output');
+
+		var timerID = null; // 初期化
+		var startBtn = document.getElementById('start');
+
+		startBtn.addEventListener("click", function(){
+
+			if (!timerID) { // timeIDの中身が空ならば
+
+				out[0].innerHTML = "タイマー作動！";
+				out[1].innerHTML = new Date();
+				timerID = setTimeout(function(){
+					alert(timerID);
+				}, 2000);
+
+			}else{ // timerIDに何か値が入っていたら
+
+				out[0].innerHTML = "既にタイマーは作動中です。";
+
+			}
+
+		}, false);
+
+
+		var endBtn = document.getElementById('end');
+
+		endBtn.addEventListener("click", function(){
+
+			if (!timerID) { // timeIDの中身が空ならば
+
+				out[0].innerHTML = "既にタイマーは止まっています。";
+
+			}else{ // timerIDに何か値が入っていたら
+
+				out[0].innerHTML = "タイマー停止！";
+				out[1].innerHTML = "";
+				clearTimeout(timerID);
+				timerID = null;
+
+			}
+
+		}, false);
+	};
+	</pre>
+</body>
+</html>

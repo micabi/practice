@@ -1,0 +1,26 @@
+h1{
+	padding-left: 10px;
+	border-left: 15px solid #00896e;
+}
+
+pre{
+	width:90%;
+	max-width: 1260px;
+	min-width:600px;
+	overflow: scroll;
+	background-color:#CCCCCC;
+	padding:10px 10px;
+	border:1px solid #666666;
+}
+
+span.mark{
+	background-color:yellow;
+			}
+
+span.mark_pink{
+	background-color:pink;
+}
+
+span.mark_blue{
+	background-color:blue;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<title>DOMとwindowの時間差</title>
+	<link rel="stylesheet" href="" />
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<h2>DOMとwindowの時間差</h2>
+	<output></output>
+
+	<pre>
+	window.addEventListener("load", function(){
+		var out = document.getElementsByTagName('output');
+		out[0].innerHTML += "windowが読み込まれました。";
+		console.log("windowが読み込まれました。");
+	}, false);
+
+	window.addEventListener("DOMContentLoaded", function(){
+		var out = document.getElementsByTagName('output');
+		out[0].innerHTML += "DOMが構築されました。";
+		console.log("DOMが構築されました。");
+	}, false);
+	</pre>
+</body>
+</html>
