@@ -1,0 +1,38 @@
+html, body{background-color: #fff;}
+
+.wrapper-gallery{
+	width: 980px;
+	padding: 30px 40px;
+	margin: 0 auto;
+}
+
+.gallery{
+	padding: 40px 40px;
+	background-color: #000;
+	border-radius: 5px;
+	line-height: 0;
+}
+
+.carousel{
+	width: 100%;
+	margin-top: 30px;
+	/*overflow: hidden;*/
+}
+
+.thumbs{
+	width: 10000px;
+}
+
+ul.thumbs-list{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+ul.thumbs-list li{
+	float: left;
+	margin: 0 1px;
+	border: 2px solid #666;
+	width: 200px;
+	height: 150px;
+}
