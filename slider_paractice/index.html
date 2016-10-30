@@ -14,8 +14,8 @@
 <body>
 	<div class="wrapper-gallery">
 		<div class="gallery">
-			<div class="carousel">
-				<div class="thumbs">
+			<div class="carousel"><!-- 画面上から見えている部分 900px -->
+				<div class="thumbs clearfix"><!-- lmgを横並びにして収めるボックス・これを動かす 2060px -->
 					<ul class="thumbs-list">
 						<li><img src="http://placehold.jp/21/999999/ffffff/200x150.png?text=thumb-01" alt="" /></li>
 						<li><img src="http://placehold.jp/21/999999/ffffff/200x150.png?text=thumb-02" alt="" /></li>
@@ -29,6 +29,9 @@
 						<li><img src="http://placehold.jp/21/999999/ffffff/200x150.png?text=thumb-10" alt="" /></li>
 					</ul><!-- /.thums-list -->
 				</div><!-- /.thumbs -->
+				<div class="thumbs-nav">
+					<a href="#" class="prev">&lt;</a><a href="#" class="next">&gt;</a>
+				</div><!-- /.thumbs-nav -->
 			</div><!-- /.carousel -->
 		</div><!-- /.gallery -->
 	</div><!-- /.wrapper-gallery -->

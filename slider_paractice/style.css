@@ -1,5 +1,18 @@
 html, body{background-color: #fff;}
 
+a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.clearfix:after{
+	display: block;
+	height: 0;
+	content: "";
+	font-size: 0;
+	visibility: hidden;
+}
+
 .wrapper-gallery{
 	width: 980px;
 	padding: 30px 40px;
@@ -14,25 +27,50 @@ html, body{background-color: #fff;}
 }
 
 .carousel{
+	position: relative;
 	width: 100%;
 	margin-top: 30px;
-	/*overflow: hidden;*/
+	overflow: hidden;
+	outline: 1px solid red;
 }
 
-.thumbs{
-	width: 10000px;
+.thumbs{ /* imgを横並びにして収めるボックス */
+	position: relative;
+	left: 0;
+	width: 2060px; /* w200px + mg6px * 10枚 */
 }
 
 ul.thumbs-list{
 	margin: 0;
 	padding: 0;
+	height: 150px;
 	list-style-type: none;
+	float: left; /* 超重要！！ */
 }
 
 ul.thumbs-list li{
 	float: left;
-	margin: 0 1px;
-	border: 2px solid #666;
+	margin: 0 6px 0 0;
 	width: 200px;
 	height: 150px;
+}
+
+.thumbs-nav a{
+	display: block;
+	width: 40px;
+	height: 80px;
+	background-color: #333;
+	position: absolute;
+	bottom: 50%;
+	margin-bottom: -40px;
+	line-height: 80px;
+	text-align: center;
+}
+
+.thumbs-nav a.prev{
+	left: 0;
+}
+
+.thumbs-nav a.next{
+	right: 0;
 }
