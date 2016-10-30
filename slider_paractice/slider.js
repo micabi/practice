@@ -18,11 +18,13 @@ $(document).ready(function(){
 		//console.log($(this).parent()); // .thumbs
 
 		$(this).parent().width(doubleListWidth);
-		//console.log($(this).parent().width()); // .thumbsの幅4120px
+		//console.log($(this).parent().width()); // .thumbsの幅を.thumbs-list*2の4120pxに
 
 		$(this).clone().insertAfter($(this)); // ul.thumbs-listを1個追加
-		//console.log($(this));
-		//console.log($(this).outerWidth()); // insertAfterしたことによりul.thumbs-listの幅は4120pxに
+		//console.log($(this)); // ul.thumbs-list
+		//console.log($(this).outerWidth()); // 2060px
+
+/* ボタン */
 
 		$("a.prev").on('click', function(event){ // クリックイベント
 			event.preventDefault();
@@ -45,22 +47,24 @@ $(document).ready(function(){
 		function moveCarousel(btn, direction){ // 関数
 			var $btn = btn;
 			var $carousel = $btn.closest(".carousel");
-			var $thmbnails = $carousel.find(".thumbs");
+			var $thumbnails = $carousel.find(".thumbs");
 			//console.log($carousel.width()); // .carouselの幅980-40-40=900px
-			//console.log($thmbnails.outerWidth()); // .thumbsの幅4120px ul.thumbs-listの幅に依存している
-			//console.log($thmbnails.position().left); // クリックsした時点の.thumbsのposition 900pxずつ動く
+			//console.log($thumbnails.outerWidth()); // .thumbsの幅4120px ul.thumbs-listの幅4120px 20行目
+			//console.log($thumbnails.position().left); // クリックsした時点の.thumbsのposition 900pxずつ動く
 
-			var moveTo = direction * $carousel.width() + $thmbnails.position().left;
-			 // 移動量は.thumbsのクリックした時点のpositionに.carouselの幅900pxを+-した分
+			var moveTo = direction * $carousel.width() + $thumbnails.position().left;
+			 // 移動量は.thumbsのクリックした時点のposition.leftに.carouselの幅900pxを+-した分
 
-			$thmbnails.filter(":not(:animated)").animate({left: moveTo}, { // thumbsを動かす
+			$thumbnails.filter(":not(:animated)").animate({left: moveTo}, { // .thumbsを900px動かす
 				duration: 500,
-				progress: function(){
-					var $imgList = $(this).find(".thumbs-list"); // .clone()したul.thumbs-listのうち1個め
+				progress: function(){ // クリックするたびに
+					var $imgList = $(this).find(".thumbs-list").first(); // .clone()したul.thumbs-listのうち1個め
 					//console.log($imgList);
-					//console.log($imgList.outerWidth());
-					//console.log($(this).find(".thumbs-list").first().outerWidth()); // 4120px
-					//console.log($(this).find(".thumbs-list").last().outerWidth()); // 4120px
+					//console.log($imgList.outerWidth()); // 2060px
+					//console.log($(this).find(".thumbs-list").outerWidth()); // 2060px
+					//console.log($(this).find(".thumbs-list").first().outerWidth()); // 2060px
+					//console.log($thumbnails.outerWidth()); // 4120px
+
 
 					var $rePosition;
 
