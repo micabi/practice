@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+p{
+  margin: 0;
+}
+
+#container{
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+}
+
+#header{
+  width: 980px;
+  height: 80px;
+  margin: 0 auto;
+  outline: 1px solid #CCC;
+}
+
+#main{
+  width: 980px;
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto;
+  outline: 1px solid #CCC;
+}
+
+#gallery{
+  width: 970px;
+  height: 330px;
+  margin: 0 auto;
+  overflow: hidden;
+  outline: 1px solid #000;
+}
+
+#slide_wrapper{ /* 970px内にslideを収める 610px x 6 */
+  width: 3660px;
+}
+
+#gallery:after{
+  content: "";
+  height: 0;
+  font-size: 0;
+  display: block;
+  clear: both;
+}
+
+.slide{
+  float: left;
+}
+
+.slide_tab{ /* 重ねない部分 */
+  width: 72px;
+  height: 330px;
+}
+
+.slide .active{ /* activeが付いたら最前面に */
+  width: 610px;
+  height: 330px;
+  z-index: 9999;
+}
+
+#footer{
+  width: 980px;
+  height: 40px;
+  margin: 0 auto;
+  outline: 1px solid #CCC;
+}
+
+
+/*
+#gallery {
+    width: 970px;
+    height: 330px;
+    overflow: hidden;
+    background: #444;
+    outline: 1px solid #000;
+}
+
+#slides {
+    width: 1500px;
+}
+
+.slide {
+    float: left;
+    overflow: hidden;
+}
+
+.slide .active {
+
+    width: 610px;
+    height: 330px;
+    z-index: 999999;
+}
+
+.slide .active:after {
+    background: rgba(0, 0, 0, 0);
+    display: none;
+}
+
+.slide_wrapper {
+
+    position: relative;
+    width: 72px;
+    height: 330px;
+
+    -webkit-transition: 1.5s;
+    -o-transition: 1.5s;
+    -ms-transition: 1.5s;
+    transition: 1.5s;
+
+}
+
+.slide_wrapper:after {
+
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 610px;
+    height: 330px;
+    background: rgba(0, 0, 0, 0.5);
+
+    -webkit-transition: 1.5s;
+    -o-transition: 1.5s;
+    -ms-transition: 1.5s;
+    transition: 1.5s;
+
+}
+*/
