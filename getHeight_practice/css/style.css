@@ -1,0 +1,29 @@
+#box{
+	width: 250px;
+	height: auto;
+	outline: 1px solid #ccc;
+}
+
+#box span{
+	font-size: 18px;
+	display: block;
+	width: 500px;
+	height: 60px;
+	line-height: 60px;
+	cursor: pointer;
+}
+
+#box ul{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	outline: 1px solid red;
+	display: none;
+}
+
+#box ul li{
+	font-size: 16px;
+	width: 250px;
+	height: 60px;
+	line-height: 60px;
+}
