@@ -4,14 +4,12 @@ $(document).ready(function() {
 		//console.log($this); //a
 		//console.log($this.next()); // ul.item
 
-		if ($this.hasClass("expand") == true) {
+		if ($this.hasClass("expand") === true) {
 			$this.removeClass("expand").next("ul").slideUp();
 		}else{
-			//var ulHeight = $("li.drop-down").children("ul.item").height();
 			$this.addClass("expand").next("ul").slideDown();
-			//$("#wrapper").height(ulHeight);
 		}
-
+		// この.expandはcssにはない。ただの後付けクラス
 
 	});
 }); // end of jQuery
