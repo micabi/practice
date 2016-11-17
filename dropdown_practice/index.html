@@ -9,9 +9,11 @@
 	<meta name="keywords" content="" />
 	<link rel="stylesheet" href="css/style.css" />
 	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-	<script src="js/get_height.js"></script>
+	<script src="js/drop_down.js"></script>
 </head>
 <body>
+<p>欠点：ul &gt; li &gt; ul &gt; liでは展開した時、下のメニューに被る。<br />
+サイドメニューで縦に使うには不向き。グローバルメニューで横に使うのが良い。</p>
 <div id="wrapper">
 	<ul class="menubar">
 		<li class="drop-down"><a href="#">親メニュー</a>
@@ -24,31 +26,7 @@
 			</ul><!-- /.item -->
 		</li><!-- /.drop-down -->
 	</ul><!-- /.menubar -->
-
-	<ul class="menubar">
-		<li class="drop-down"><a href="#">親メニュー</a>
-			<ul class="item">
-				<li><a href="#">子メニュー1</a></li>
-				<li><a href="#">子メニュー2</a></li>
-				<li><a href="#">子メニュー3</a></li>
-				<li><a href="#">子メニュー4</a></li>
-				<li><a href="#">子メニュー5</a></li>
-			</ul><!-- /.item -->
-		</li><!-- /.drop-down -->
-	</ul><!-- /.menubar -->
-
-	<ul class="menubar">
-		<li class="drop-down"><a href="#">親メニュー</a>
-			<ul class="item">
-				<li><a href="#">子メニュー1</a></li>
-				<li><a href="#">子メニュー2</a></li>
-				<li><a href="#">子メニュー3</a></li>
-				<li><a href="#">子メニュー4</a></li>
-				<li><a href="#">子メニュー5</a></li>
-			</ul><!-- /.item -->
-		</li><!-- /.drop-down -->
-	</ul><!-- /.menubar -->
 </div><!-- /#wrapper -->
-<p>欠点：展開した時、下のメニューに被る。</p>
+
 </body>
 </html>
