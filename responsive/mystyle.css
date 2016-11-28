@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+/*
+
+スマホ： 320 - 480px
+タブレット： 480 - 768px
+PC：768px以上
+
+*/
+
+
+/* 共通のスタイル */
+body{
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 62.5%;
+	width: 100%;
+	margin: 0 auto;
+}
+
+h1{
+	font-size: 4.8em;
+}
+
+h2{
+	font-size: 3.2em;
+}
+
+p{
+	font-size: 1.6em;
+}
+
+ul li{
+	font-size: 1.6em;
+}
+
+#header{
+	background-color: red;
+}
+
+#footer{
+	background-color: lightgreen;
+}
+
+#container{
+}
+
+#main{
+	background-color: orange;
+}
+
+#sub{
+	background-color: yellow;
+}
+
+#footerNavLink{
+	float: right;
+	font-size: 4.8em;
+}
+
+#footerNavLink a{
+	color: #fff;
+	text-decoration: none;
+}
+
+#headerNav ul{
+	list-style: none;
+	overflow: hidden; /* カラム落ち防止 */
+}
+
+#headerNav ul li{
+	float: left;
+	width: 33%;
+}
+
+#footerNav ul{
+	overflow: hidden;
+}
+
+#footerNav ul li{
+	float: left;
+	width: 33%;
+}
+
+img{
+	max-width: 100%; /* これだけで高さを計算してくれる */
+}
+
+/* レスポンシブにiframeを対応させる */
+.movie-wrap{
+	width: 95%;
+	margin: 0 auto;
+}
+
+.movie{ /* iframeに直接max-width:100%では高さが崩れる */
+	position: relative;
+	height: 0; /* heightを0にしてしまう */
+	padding-top: 56.25%;  /*高さをpadding-topで出す 16:9 */
+	/* 高さ÷幅×100 */
+}
+
+.movie iframe{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%; /* iframe自体は100% */
+	height: 100%; /* iframe自体は100% */
+}
+
+/* スマホのスタイル（モバイルファースト幅480px以下） */
+#header{
+	background-color: blue;
+}
+
+#headerNav{
+	display: none;
+}
+
+/* タブレットのスタイル */
+@media screen and (min-width: 480px){ /* 幅が最低でも480pxあったら */
+	#header{
+		background-color: lightblue;
+	}
+
+	#headerNav{
+		display: block;
+	}
+
+	#footerNavLink{
+		display: none;
+	}
+
+	#footerNav{
+		display: none;
+	}
+
+	#footer{
+		background-color: green;
+	}
+}
+
+/* PCのスタイル */
+
+/*
+	all: 980px
+	sub: 200px
+	margin: 15px
+	main: 765px
+*/
+
+@media screen and (min-width: 768px){ /* 幅が最低でも768pxあったら */
+	#header{
+		background-color: red;
+	}
+
+	#container{
+		/*overflow: hidden;*/
+	}
+
+	#container:after{
+		display: block;
+		content: ".";
+		background-color: #ccc;
+		width: 0;
+		height: 0;
+		clear: both;
+	}
+
+	#main{
+		float: left;
+		width: 78.06124%;
+	}
+
+	#sub{
+		float: right;
+		width: 20.40816%;
+		/*word-break: break-all;*/
+	}
+
+	#footer{
+		background-color: green;
+	}
+}
