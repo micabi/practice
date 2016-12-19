@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.box1{
+	width: 90%;
+	height: 200px;
+	margin: 20px auto;
+	background: -webkit-linear-gradient(top, #ccc, #fff 25%, #fff 75%, #ccc);
+	background: linear-gradient(to bottom, #ccc, #fff 25%, #fff 75%, #ccc);
+	box-shadow: inset  0 -2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.box2{
+	width: 90%;
+	height: 200px;
+	margin: 20px auto;
+	background: -webkit-linear-gradient(left, #ccc,#fff);
+	background: linear-gradient(to right, #ccc,#fff);
+	box-shadow: inset -2px 0 2px rgba(0, 0, 0, 0.2);
+}
