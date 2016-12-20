@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>レスポンシブ</title>
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.0/build/cssreset/cssreset-min.css">
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+
+<div id="header">
+	<div id="footerNavLink">
+		<a href="#footer">+</a>
+	</div><!-- /#footerNavLink -->
+		<h1>Header</h1>
+		<p>ここはヘッダー。</p>
+		<div id="headerNav">
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</div><!-- /#headerNav -->
+</div><!-- /#header -->
+
+<div id="container">
+	<div id="main">
+		<h2>Main</h2>
+		<p>ここはメインエリア。ここはメインエリア。ここはメインエリア。ここはメインエリア。
+		ここはメインエリア。ここはメインエリア。ここはメインエリア。ここはメインエリア。</p>
+		<img src="http://placehold.jp/1800x300.png" alt="イメージ">
+		<div class="movie-wrap">
+			<div class="movie">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/AoYEWyzPcH0" frameborder="0" allowfullscreen></iframe>
+			</div><!-- /.movie -->
+		</div><!-- /.movie-wrap -->
+		<p>imgはmax-width: 100%で幅いっぱい、高さは自動計算。動画はwrapを作ってそれにwidth: 100%を指定し、動画にはheight: 0、
+			padding-top: 56.25%（高さ÷幅×100）とする。</p>
+	</div><!-- /#main -->
+
+	<div id="sub">
+		<h2>Sub</h2>
+		<p>ここはサブエリア。ここはサブエリア。ここはサブエリア。ここはサブエリア。ここはサブエリア。</p>
+	</div><!-- /#sub -->
+</div><!-- /#container -->
+
+<div id="footer">
+	<h2>Footer</h2>
+	<p>ここはフッター</p>
+	<div id="footerNav">
+		<ul>
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</ul>
+	</div><!-- /#footerNav -->
+</div><!-- /#footer -->
+
+
+</body>
+</html>
