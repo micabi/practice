@@ -3,7 +3,9 @@
 .image-wrap{
 	width: 100%;
 	overflow: hidden;
-	outline: 1px solid #000;
+	margin: 50px 0 0 20px;
+	padding: 20px;
+	/*outline: 1px solid #000;*/
 }
 
 .image-wrap ul{
@@ -22,11 +24,11 @@
 }
 
 .image-wrap li.first a.btn-action img{
-	-webkit-transition: box-shadow .6s ease-in-out;
-	transition: box-shadow .6s ease-in-out;
+	-webkit-transition: box-shadow .4s ease-in-out;
+	transition: box-shadow .4s ease-in-out;
 	box-shadow: none;
 }
 
 .image-wrap li.first a.btn-action img.animate{
-	box-shadow: 0, 0, 12px, 12px rgba(117, 180, 196, 0.5);
+	box-shadow: 0 0 6px 6px rgba(117, 180, 196, 0.5);
 }
