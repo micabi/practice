@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.image-wrap{
+	width: 100%;
+	overflow: hidden;
+	outline: 1px solid #000;
+}
+
+.image-wrap ul{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.image-wrap ul li{
+	float: left;
+	margin-right: 50px;
+}
+
+.image-wrap img{
+	border-radius: 50%;
+}
+
+.image-wrap li.first a.btn-action img{
+	-webkit-transition: box-shadow .6s ease-in-out;
+	transition: box-shadow .6s ease-in-out;
+	box-shadow: none;
+}
+
+.image-wrap li.first a.btn-action img.animate{
+	box-shadow: 0, 0, 12px, 12px rgba(117, 180, 196, 0.5);
+}
