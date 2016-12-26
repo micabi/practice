@@ -11,4 +11,8 @@ $(document).ready(function(){
 		//console.log(this); // a
 		$(this).children('img').removeClass('animate');
 	});
+
+	$('li.second').children('a.btn-action').on('click', function(e){
+		e.preventDefault();
+	});
 });
