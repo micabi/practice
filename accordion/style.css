@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+*{padding:0; margin: 0}
+
+ul.accordion li{
+	margin: 0 0 5px 0;
+	padding: 25px 10px;
+	background-color: #bdbdbd;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+ul.accordion li:after{
+	content: "▼";
+	width: 10px;
+	height: 10px;
+	display: block;
+	margin: 0 30px 0;
+	color: #fff;
+}
+
+ul.accordion li:hover{
+	background-color: #ddd;
+}
+
+ul.accordion li .content{
+	display: none;
+}
+
+ul.accordion li.expand{
+	background-color: #ddd;
+}
+
+ul.accordion li.expand:after{
+	content: "▲";
+	width: 10px;
+	height: 10px;
+	display: block;
+	margin: 0 30px 0;
+	color: #fff;
+}
+
+ul.accordion li.expand .content{
+	border-top: 1px solid #fff;
+}
