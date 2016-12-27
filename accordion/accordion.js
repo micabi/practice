@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	//console.log("load");
 	$('.accordion').children('li').on('click', function(){
-		//alert("click");
-		$(this).toggleClass('expand').find('.content').slideToggle();
+		console.log($(this)); // li
+		$(this).toggleClass('expand').find('.content').slideToggle()
+		.end().siblings('li').removeClass('expand').find('.content').slideUp();
 	});
 });
