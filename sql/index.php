@@ -18,7 +18,7 @@
 </head>
 <body>
 <pre>
-	<?php
+
 	// 変数の設定
 	$db_user = "root";
 	$db_pass = "";
@@ -43,7 +43,7 @@
 	$staff_code = $_POST['staffcode'];
 	var_dump($staff_code);
 
- ?>
+
 </pre>
 </body>
 </html>
