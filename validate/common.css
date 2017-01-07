@@ -10,6 +10,15 @@ table tr td{
 	padding: 5px;
 }
 
+table tr td span{
+	color: #f00;
+}
+
+span.alert{
+	display: block;
+	font-size: 14px;
+}
+
 .button{
 	width: 135px;
 	margin: 20px auto;

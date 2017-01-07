@@ -19,24 +19,36 @@
 	<table>
 		<tbody>
 			<tr>
-				<td scope="col">お名前</td>
-				<td><input type="text" name="name" value="" /></td>
+				<td scope="col">お名前<span>※</span></td>
+				<td>
+					<span class="alert"></span>
+					<input type="text" name="name" value="" />
+				</td>
 			</tr>
 			<tr>
 				<td>フリガナ</td>
 				<td><input type="text" name="kana" value="" /></td>
 			</tr>
 			<tr>
-				<td>メールアドレス</td>
-				<td><input type="text" name="mail" value="" /></td>
+				<td>メールアドレス<span>※</span></td>
+				<td>
+					<span class="alert"></span>
+					<input type="text" name="mail" value="" />
+				</td>
 			</tr>
 			<tr>
-				<td>電話番号</td>
-				<td><input type="text" name="tel" value="" /></td>
+				<td>電話番号<span>※</span></td>
+				<td>
+					<span class="alert"></span>
+					<input type="text" name="tel" value="" />
+				</td>
 			</tr>
 			<tr>
-				<td>郵便番号</td>
-				<td><input type="text" name="zip" value=""  size="8" /></td>
+				<td>郵便番号<span>※</span></td>
+				<td>
+					<span class="alert"></span>
+					<input type="text" name="zip" value=""  size="8" />
+				</td>
 			</tr>
 			<tr>
 				<td>住所</td>
@@ -51,7 +63,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>年齢</td>
+				<td>年代</td>
 				<td>
 					<select name="old">
 						<option value="">選択して下さい</option>
@@ -65,8 +77,9 @@
 				</td>
 			</tr>
 			<tr>
-				<td>コメント</td>
+				<td>コメント(50文字以内)<span>※</span></td>
 				<td>
+					<span class="alert"></span>
 					<textarea name="comment" rows="8" cols="50"></textarea>
 					<p class="length"></p>
 				</td>
