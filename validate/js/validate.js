@@ -1,38 +1,5 @@
 $(document).ready(function(){
 
-	// テキストエリア文字数カウント
-	$('p.length').text('0');
-
-	$('[name=comment]').on('keyup', function(){
-		var text = $('[name=comment]').val();
-		var textlength = text.length;
-
-		$('p.length').text(textlength);
-
-		if (textlength >= 50) {
-			$('p.length').css({
-				'color': 'red'
-			});
-		}
-	});
-
-	$('[name=comment]').on('blur', function(){
-		$('p.length').css({
-			'color': '#000'
-		});
-
-		var alertComment = "コメントは入力必須項目です。";
-			if ($(this).val() === "") {
-				$(this).prev('span.alert').text(alertComment);
-			}else{
-				$(this).prev('span.alert').text("");
-			}
-
-			if ($(this).val().length > 50) {
-				$(this).prev('span.alert').text("50文字以内で記入して下さい。");
-			}
-	});
-
 	// お名前
 	$('[name=name]').on('blur', function(){
 		var alertName = "お名前は入力必須項目です。";
@@ -41,6 +8,15 @@ $(document).ready(function(){
 			$(this).prev('span.alert').text(alertName);
 		}else{
 			$(this).prev('span.alert').text("");
+		}
+	});
+
+	// フリガナ
+	$('[name=kana]').on('blur', function(){
+		var alertKana = "全角カタカナで記入して下さい。";
+		var yourKana = $(this).val();
+		if (!yourKana.match(/^[ァ-ロワヲンー \r\n\t] + $/)) {
+			console.log(alertKana);
 		}
 	});
 
@@ -96,4 +72,38 @@ $(document).ready(function(){
 			$(this).prev('span.alert').text("");
 		}
 	});
+
+		// テキストエリア文字数カウント
+		$('p.length').text('0');
+
+		$('[name=comment]').on('keyup', function(){
+			var text = $('[name=comment]').val();
+			var textlength = text.length;
+
+			$('p.length').text(textlength);
+
+			if (textlength >= 50) {
+				$('p.length').css({
+					'color': 'red'
+				});
+			}
+		});
+
+		$('[name=comment]').on('blur', function(){
+			$('p.length').css({
+				'color': '#000'
+			});
+
+			var alertComment = "コメントは入力必須項目です。";
+				if ($(this).val() === "") {
+					$(this).prev('span.alert').text(alertComment);
+				}else{
+					$(this).prev('span.alert').text("");
+				}
+
+				if ($(this).val().length > 50) {
+					$(this).prev('span.alert').text("50文字以内で記入して下さい。");
+				}
+		});
+
 });
