@@ -15,8 +15,15 @@ $(document).ready(function(){
 	$('[name=kana]').on('blur', function(){
 		var alertKana = "全角カタカナで記入して下さい。";
 		var yourKana = $(this).val();
-		if (!yourKana.match(/^[ァ-ロワヲンー \r\n\t] + $/)) {
-			console.log(alertKana);
+		yourKana = yourKana.replace(/[\n\s ]/g, '');
+		console.log(yourKana.length);
+
+		if (yourKana === "") {
+			$(this).prev('span.alert').text("記入して下さい。");
+		}else if(!yourKana.match(/^[ァ-ン]*$/)) {
+			$(this).prev('span.alert').text(alertKana);
+		}else{
+			$(this).prev('span.alert').text("");
 		}
 	});
 
@@ -28,8 +35,8 @@ $(document).ready(function(){
 		yourTel = yourTel.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'');
 		var formatTel = yourTel.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
 		formatTel = $.trim(formatTel);
-		//console.log(formatTel);
-		console.log(formatTel.length);
+		//console.log(formatTel);　/[Ａ-Ｚａ-ｚ０-９]/g
+		//console.log(formatTel.length);
 
 		if (formatTel.length > 11 || formatTel === "") {
 			$(this).prev('span.alert').text(alertTel);
@@ -44,7 +51,7 @@ $(document).ready(function(){
 		var alertMail = "メールアドレスの形式ではありません。入力必須項目です。";
 		var yourMail = $(this).val();
 		yourMail = yourMail.replace(/[\n\s ]/g, '');
-		console.log(yourMail);
+		//console.log(yourMail);
 
 		if (!yourMail.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)) {
 			$(this).prev('span.alert').text(alertMail);
