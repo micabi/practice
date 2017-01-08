@@ -2,13 +2,16 @@ $(document).ready(function(){
 
 	// お名前
 	$('[name=name]').on('blur', function(){
+		/*
 		var alertName = "お名前は入力必須項目です。";
-		var yourName = $.trim($(this).val());
+		var yourName = $(this).val();
 		if (yourName === "") {
 			$(this).prev('span.alert').text(alertName);
 		}else{
 			$(this).prev('span.alert').text("");
 		}
+		*/
+		nameCheck();
 	});
 
 	// フリガナ
@@ -38,7 +41,7 @@ $(document).ready(function(){
 		//console.log(formatTel);　/[Ａ-Ｚａ-ｚ０-９]/g
 		//console.log(formatTel.length);
 
-		if (formatTel.length > 11 || formatTel === "") {
+		if (formatTel.length < 10 || formatTel.length > 11 || formatTel === "") {
 			$(this).prev('span.alert').text(alertTel);
 		}else{
 			$(this).val(formatTel);
@@ -80,6 +83,35 @@ $(document).ready(function(){
 		}
 	});
 
+	// 性別
+	$('[name=sex]').on('blur', function(){
+		var alertSex = "1つ選択して下さい。";
+		var yourSex = $('[name=sex]:checked').val();
+		if (yourSex === undefined) {
+			$(this).prev('span.alert').text(alertSex);
+			console.log("undifined");
+		}else{
+			$(this).prev('span.alert').text("");
+			console.log(yourSex);
+		}
+	});
+
+	// 年代
+	$('[name=old]').on('blur', function(){
+		var alertOld = "1つ選択して下さい。";
+		var yourOld = $(this).val();
+		if (yourOld === null) {
+			$(this).prev('span.alert').text(alertOld);
+			console.log("null");
+		}else if(yourOld === ""){
+			$(this).prev('span.alert').text(alertOld);
+			console.log("空");
+		}else{
+			$(this).prev('span.alert').text("");
+			console.log(yourOld);
+		}
+	});
+
 		// テキストエリア文字数カウント
 		$('p.length').text('0');
 
@@ -113,4 +145,52 @@ $(document).ready(function(){
 				}
 		});
 
+		$('form#form').on('submit', function(){
+			nameCheck();
+		});
+
+		function formCheck(){
+			nameCheck();
+			return false;
+		}
+
+		function nameCheck(){
+			var alertName = "お名前は入力必須項目です。";
+			var yourName = $('[name=name]').val();
+			if (yourName === "") {
+				$('[name=name]').prev('span.alert').text(alertName);
+				return false;
+			}else{
+				$('[name=name]').prev('span.alert').text("");
+				return true;
+			}
+		}
+
+		function kanaCheck(){
+
+		}
+
+		function mailCheck(){
+
+		}
+
+		function telCheck(){
+
+		}
+
+		function zipCheck(){
+
+		}
+
+		function sexCheck(){
+
+		}
+
+		function oldCheck(){
+
+		}
+
+		function commentCheck(){
+
+		}
 });

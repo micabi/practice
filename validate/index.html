@@ -16,6 +16,9 @@
 </head>
 <body>
 	<h2>validate</h2>
+
+	<form id="form" action="" method="post">
+
 	<table>
 		<tbody>
 			<tr>
@@ -60,6 +63,7 @@
 			<tr>
 				<td>性別</td>
 				<td>
+					<span class="alert"></span>
 					<label for="male"><input type="radio" id="male" name="sex" value="male">男性</label>
 					<label for="female"><input type="radio" id="female" name="sex" value="female">女性</label>
 					<label for="none"><input type="radio" id="none" name="sex" value="none">それ以外</label>
@@ -68,8 +72,9 @@
 			<tr>
 				<td>年代</td>
 				<td>
+					<span class="alert"></span>
 					<select name="old">
-						<option value="">選択して下さい</option>
+						<option value="" selected>選択して下さい</option>
 						<option value="10">10代</option>
 						<option value="20">20代</option>
 						<option value="30">30代</option>
@@ -93,5 +98,6 @@
 		<input type="submit" name="submit" value="確認する">
 		<input type="button" name="cancel" value="キャンセル">
 	</div><!-- /.button -->
+	</form>
 </body>
 </html>
