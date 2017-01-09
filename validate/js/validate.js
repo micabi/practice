@@ -146,7 +146,7 @@ $(document).ready(function(){
 		});
 
 		$('form#form').on('submit', function(){
-			nameCheck();
+			//console.log(nameCheck);
 		});
 
 		function formCheck(){
