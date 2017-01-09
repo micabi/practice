@@ -116,7 +116,7 @@ $(document).ready(function(){
 		function nameCheck(){
 			var alertName = "お名前は入力必須項目です。";
 			var yourName = $('[name=name]').val();
-			if (yourName === "") {
+			if (yourName === "" || yourName.match(/^[ 　\r\n\t]*$/)) {
 				$('[name=name]').prev('span.alert').text(alertName);
 				flag++;
 				return false;
@@ -131,7 +131,7 @@ $(document).ready(function(){
 				var yourKana = $('[name=kana]').val();
 				yourKana = yourKana.replace(/[\n\s ]/g, '');
 
-				if (yourKana === "") {
+				if (yourKana === "" || yourKana.match(/^[ 　\r\n\t]*$/)) {
 					$('[name=kana]').prev('span.alert').text("記入して下さい。");
 					flag++;
 					return false;
@@ -147,7 +147,7 @@ $(document).ready(function(){
 		function telCheck(){
 				var alertTel = "電話番号は10桁または11桁の数字で記入して下さい。";
 				var yourTel = $('[name="tel"]').val();
-				yourTel = yourTel.replace(/[\n\s ]/g, '');
+				yourTel = yourTel.replace(/[\n\s ]/gi, '');
 				yourTel = yourTel.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'');
 				var formatTel = yourTel.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
 				formatTel = $.trim(formatTel);
@@ -165,7 +165,7 @@ $(document).ready(function(){
 		function mailCheck(){
 				var alertMail = "メールアドレスの形式ではありません。入力必須項目です。";
 				var yourMail = $('[name=mail]').val();
-				yourMail = yourMail.replace(/[\n\s ]/g, '');
+				yourMail = yourMail.replace(/[\n\s ]/gi, '');
 
 				if (!yourMail.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)) {
 					$('[name=mail]').prev('span.alert').text(alertMail);
@@ -180,10 +180,10 @@ $(document).ready(function(){
 				var alertZip = "郵便番号は7桁の数字で記入して下さい。";
 				var yourZip = $('[name=zip]').val();
 				yourZip = yourZip.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'');
-				yourZip = yourZip.replace(/[\n\s ]/g, ''); // スペース、改行を除去
+				yourZip = yourZip.replace(/[\n\s ]/gi, ''); // スペース、改行を除去
 				var formatZip = yourZip.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
 
-				if (formatZip.length != 7) {
+				if (formatZip.length != 7 || formatZip.match(/^[ 　\r\n\t]*$/)) {
 					$('[name=zip]').prev('span.alert').text(alertZip);
 					flag++;
 					return false;
@@ -196,12 +196,13 @@ $(document).ready(function(){
 		function addressCheck(){
 			var alertAddress = "入力必須項目です。";
 			var yourAddress = $('[name=address]').val();
-			yourAddress.replace(/[\n\s ]/g, '');
-			yourAddress.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi, '-');
+			yourAddress.replace(/\s/g, "");
+			//console.log(yourAddress);
 			var formatAddress = yourAddress.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
-			console.log(formatAddress);
+			formatAddress = formatAddress.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'-');
+			//console.log(formatAddress);
 
-			if (formatAddress === "") {
+			if (formatAddress === "" || formatAddress.match(/^[ 　\r\n\t]*$/)) {
 				$('[name=address]').prev('span.alert').text(alertAddress);
 				flag++;
 				return false;
@@ -241,7 +242,7 @@ $(document).ready(function(){
 
 		function commentCheck(){
 				var alertComment = "コメントは入力必須項目です。";
-					if ($('[name=comment]').val() === "") {
+					if ($('[name=comment]').val() === "" || $('[name=comment]').val().match(/^[ 　\r\n\t]*$/)) {
 						$('[name=comment]').prev('span.alert').text(alertComment);
 						flag++;
 						return false;
@@ -261,6 +262,7 @@ $(document).ready(function(){
 				myForm.find(':text, select, textarea, radio, checkbox').val("").end().find(':checked').prop('checked', false);
 				// #formの子要素全てからtype=text, radio, select, textarea, checkboxを見つけてvalue=""にして、
 				// もう一度#formに戻り、全ての子要素から:checedになっているものを外す。
+				$('p.length').text("0");
 				myForm.find('span.alert, span.alertsex').text("");
 				flag = 0;
 			}
