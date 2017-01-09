@@ -16,7 +16,6 @@ $(document).ready(function(){
 		var alertKana = "全角カタカナで記入して下さい。";
 		var yourKana = $(this).val();
 		yourKana = yourKana.replace(/[\n\s ]/g, '');
-		console.log(yourKana.length);
 
 		if (yourKana === "") {
 			$(this).prev('span.alert').text("記入して下さい。");
@@ -35,8 +34,6 @@ $(document).ready(function(){
 		yourTel = yourTel.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'');
 		var formatTel = yourTel.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
 		formatTel = $.trim(formatTel);
-		//console.log(formatTel);　/[Ａ-Ｚａ-ｚ０-９]/g
-		//console.log(formatTel.length);
 
 		if (formatTel.length < 10 || formatTel.length > 11 || formatTel === "") {
 			$(this).prev('span.alert').text(alertTel);
@@ -51,13 +48,11 @@ $(document).ready(function(){
 		var alertMail = "メールアドレスの形式ではありません。入力必須項目です。";
 		var yourMail = $(this).val();
 		yourMail = yourMail.replace(/[\n\s ]/g, '');
-		//console.log(yourMail);
 
 		if (!yourMail.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)) {
 			$(this).prev('span.alert').text(alertMail);
 		}else{
 			$(this).prev('span.alert').text("");
-			console.log(yourMail);
 		}
 	});
 
@@ -67,10 +62,7 @@ $(document).ready(function(){
 		var yourZip = $(this).val();
 		yourZip = yourZip.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'');
 		yourZip = yourZip.replace(/[\n\s ]/g, ''); // スペース、改行を除去
-		//console.log(yourZip);
 		var formatZip = yourZip.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
-		//console.log(formatZip);
-		console.log(formatZip.length);
 
 		if (formatZip.length != 7) {
 			$(this).prev('span.alert').text(alertZip);
@@ -86,10 +78,8 @@ $(document).ready(function(){
 		var yourSex = $('[name=sex]:checked').val();
 		if (yourSex === undefined) {
 			$(this).prev('span.alert').text(alertSex);
-			//console.log("undifined");
 		}else{
 			$(this).prev('span.alert').text("");
-			//console.log(yourSex);
 		}
 	});
 
@@ -99,13 +89,10 @@ $(document).ready(function(){
 		var yourOld = $(this).val();
 		if (yourOld === null) {
 			$(this).prev('span.alert').text(alertOld);
-			console.log("null");
 		}else if(yourOld === ""){
 			$(this).prev('span.alert').text(alertOld);
-			console.log("空");
 		}else{
 			$(this).prev('span.alert').text("");
-			console.log(yourOld);
 		}
 	});
 
@@ -145,7 +132,7 @@ $(document).ready(function(){
 		$('form#form').on('submit', function(event){
 			event.preventDefault();
 
-
+			// ここでスタックオーバーフローを起こしている。
 			if(!nameCheck || !kanaCheck || !telCheck || !mailCheck || !zipCheck || !sexCheck || !oldCheck || !commentCheck){
 				alert("未記入の項目、または形式が適切でない項目があります。");
 				$(this).off('submit');
@@ -175,7 +162,6 @@ $(document).ready(function(){
 				var alertKana = "全角カタカナで記入して下さい。";
 				var yourKana = $('[name=kana]').val();
 				yourKana = yourKana.replace(/[\n\s ]/g, '');
-				//console.log(yourKana.length);
 
 				if (yourKana === "") {
 					$('[name=kana]').prev('span.alert').text("記入して下さい。");
@@ -196,8 +182,6 @@ $(document).ready(function(){
 				yourTel = yourTel.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'');
 				var formatTel = yourTel.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
 				formatTel = $.trim(formatTel);
-				//console.log(formatTel);　/[Ａ-Ｚａ-ｚ０-９]/g
-				//console.log(formatTel.length);
 
 				if (formatTel.length < 10 || formatTel.length > 11 || formatTel === "") {
 					$('[name="tel"]').prev('span.alert').text(alertTel);
@@ -213,15 +197,12 @@ $(document).ready(function(){
 				var alertMail = "メールアドレスの形式ではありません。入力必須項目です。";
 				var yourMail = $('[name=mail]').val();
 				yourMail = yourMail.replace(/[\n\s ]/g, '');
-				//console.log(yourMail);
 
 				if (!yourMail.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)) {
 					$('[name=mail]').prev('span.alert').text(alertMail);
 					return false;
 				}else{
 					$('[name=mail]').prev('span.alert').text("");
-					//console.log(yourMail);
-
 				}
 			}
 
@@ -230,10 +211,7 @@ $(document).ready(function(){
 				var yourZip = $('[name=zip]').val();
 				yourZip = yourZip.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'');
 				yourZip = yourZip.replace(/[\n\s ]/g, ''); // スペース、改行を除去
-				//console.log(yourZip);
 				var formatZip = yourZip.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
-				//console.log(formatZip);
-				//console.log(formatZip.length);
 
 				if (formatZip.length != 7) {
 					$('[name=zip]').prev('span.alert').text(alertZip);
@@ -253,8 +231,6 @@ $(document).ready(function(){
 					return false;
 				}else{
 					$('.alertsex').text("");
-					//console.log(yourSex);
-
 				}
 			}
 
@@ -263,16 +239,12 @@ $(document).ready(function(){
 				var yourOld = $('[name=old]').val();
 				if (yourOld === null) {
 					$('[name=old]').prev('span.alert').text(alertOld);
-					//console.log("null");
 					return false;
 				}else if(yourOld === ""){
 					$('[name=old]').prev('span.alert').text(alertOld);
-					//console.log("空");
 					return false;
 				}else{
 					$('[name=old]').prev('span.alert').text("");
-					//console.log(yourOld);
-
 				}
 			}
 
@@ -283,7 +255,6 @@ $(document).ready(function(){
 						return false;
 					}else{
 						$('[name=comment]').prev('span.alert').text("");
-
 					}
 
 					if ($('[name=comment]').val().length > 50) {
