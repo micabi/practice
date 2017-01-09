@@ -20,6 +20,7 @@ span.alert{
 }
 
 .button{
-	width: 140px;
+	width: 100%;
 	margin: 20px auto;
+	text-align: center;
 }
