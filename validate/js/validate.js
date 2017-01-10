@@ -99,6 +99,7 @@ $(document).ready(function(){
 				$(this).off('submit'); // okの時でも1度イベント解除する
 				alert("送信されました。");
 				$('form#form').submit();
+				$('form#form').find(':submit').attr('disabled', true);
 			}
 
 			// これではスタックオーバーフローを起こす。
@@ -116,11 +117,13 @@ $(document).ready(function(){
 		function nameCheck(){
 			var alertName = "お名前は入力必須項目です。";
 			var yourName = $('[name=name]').val();
+			yourName = yourName.replace(/(^\s+)|(\s+$)/g, '');
 			if (yourName === "" || yourName.match(/^[ 　\r\n\t]*$/)) {
 				$('[name=name]').prev('span.alert').text(alertName);
 				flag++;
 				return false;
 			}else{
+				$('[name=name]').val(yourName);
 				$('[name=name]').prev('span.alert').text("");
 
 			}
@@ -129,7 +132,7 @@ $(document).ready(function(){
 		function kanaCheck(){
 				var alertKana = "全角カタカナで記入して下さい。";
 				var yourKana = $('[name=kana]').val();
-				yourKana = yourKana.replace(/[\n\s ]/g, '');
+				yourKana = yourKana.replace(/(^\s+)|(\s+$)/g, '');
 
 				if (yourKana === "" || yourKana.match(/^[ 　\r\n\t]*$/)) {
 					$('[name=kana]').prev('span.alert').text("記入して下さい。");
@@ -140,6 +143,7 @@ $(document).ready(function(){
 					flag++;
 					return false;
 				}else{
+					$('[name=kana]').val(yourKana);
 					$('[name=kana]').prev('span.alert').text("");
 				}
 			}
@@ -147,7 +151,7 @@ $(document).ready(function(){
 		function telCheck(){
 				var alertTel = "電話番号は10桁または11桁の数字で記入して下さい。";
 				var yourTel = $('[name="tel"]').val();
-				yourTel = yourTel.replace(/[\n\s ]/gi, '');
+				yourTel = yourTel.replace(/(^\s+)|(\s+$)/g, '');
 				yourTel = yourTel.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'');
 				var formatTel = yourTel.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
 				formatTel = $.trim(formatTel);
@@ -165,13 +169,14 @@ $(document).ready(function(){
 		function mailCheck(){
 				var alertMail = "メールアドレスの形式ではありません。入力必須項目です。";
 				var yourMail = $('[name=mail]').val();
-				yourMail = yourMail.replace(/[\n\s ]/gi, '');
+				yourMail = yourMail.replace(/(^\s+)|(\s+$)/g, '');
 
 				if (!yourMail.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)) {
 					$('[name=mail]').prev('span.alert').text(alertMail);
 					flag++;
 					return false;
 				}else{
+					$('[name=mail]').val(yourMail);
 					$('[name=mail]').prev('span.alert').text("");
 				}
 			}
@@ -181,6 +186,7 @@ $(document).ready(function(){
 				var yourZip = $('[name=zip]').val();
 				yourZip = yourZip.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'');
 				yourZip = yourZip.replace(/[\n\s ]/gi, ''); // スペース、改行を除去
+				yourZip = yourZip.replace(/(^\s+)|(\s+$)/g, '');
 				var formatZip = yourZip.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
 
 				if (formatZip.length != 7 || formatZip.match(/^[ 　\r\n\t]*$/)) {
@@ -196,7 +202,7 @@ $(document).ready(function(){
 		function addressCheck(){
 			var alertAddress = "入力必須項目です。";
 			var yourAddress = $('[name=address]').val();
-			yourAddress.replace(/\s/g, "");
+			yourAddress.replace(/(^\s+)|(\s+$)/g, '');
 			//console.log(yourAddress);
 			var formatAddress = yourAddress.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
 			formatAddress = formatAddress.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'-');
@@ -216,11 +222,13 @@ $(document).ready(function(){
 				var alertSex = "1つ選択して下さい。";
 				var yourSex = $('[name=sex]:checked').val();
 				if (yourSex === undefined) {
-					$('.alertsex').text(alertSex);
+					//$('[name=sex]:checked').next('span.alert').text(alertSex);
+					console.log($('[name=sex]:checked').next());
+
 					flag++;
 					return false;
 				}else{
-					$('.alertsex').text("");
+					//$('[name=sex]:checked').next('span.alert').text("");
 				}
 			}
 
@@ -242,11 +250,15 @@ $(document).ready(function(){
 
 		function commentCheck(){
 				var alertComment = "コメントは入力必須項目です。";
+				var yourComment = $('[name=comment]').val() ;
+				yourComment = yourComment.replace(/(^\s+)|(\s+$)/gi, '');
+
 					if ($('[name=comment]').val() === "" || $('[name=comment]').val().match(/^[ 　\r\n\t]*$/)) {
 						$('[name=comment]').prev('span.alert').text(alertComment);
 						flag++;
 						return false;
 					}else{
+						$('[name=comment]').val(yourComment);
 						$('[name=comment]').prev('span.alert').text("");
 					}
 
