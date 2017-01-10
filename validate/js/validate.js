@@ -70,6 +70,8 @@ $(document).ready(function(){
 			});
 
 			commentCheck();
+			var textlength = $(this).val().length;
+			$('p.length').text(textlength);
 			flag = 0;
 		});
 
@@ -203,10 +205,8 @@ $(document).ready(function(){
 			var alertAddress = "入力必須項目です。";
 			var yourAddress = $('[name=address]').val();
 			yourAddress.replace(/(^\s+)|(\s+$)/g, '');
-			//console.log(yourAddress);
 			var formatAddress = yourAddress.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
 			formatAddress = formatAddress.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'-');
-			//console.log(formatAddress);
 
 			if (formatAddress === "" || formatAddress.match(/^[ 　\r\n\t]*$/)) {
 				$('[name=address]').prev('span.alert').text(alertAddress);
@@ -222,13 +222,11 @@ $(document).ready(function(){
 				var alertSex = "1つ選択して下さい。";
 				var yourSex = $('[name=sex]:checked').val();
 				if (yourSex === undefined) {
-					//$('[name=sex]:checked').next('span.alert').text(alertSex);
-					console.log($('[name=sex]:checked').next());
-
+					$('[name=sex]').closest('td').find('span.alert').text(alertSex);
 					flag++;
 					return false;
 				}else{
-					//$('[name=sex]:checked').next('span.alert').text("");
+					$('[name=sex]').closest('td').find('span.alert').text("");
 				}
 			}
 
@@ -275,7 +273,7 @@ $(document).ready(function(){
 				// #formの子要素全てからtype=text, radio, select, textarea, checkboxを見つけてvalue=""にして、
 				// もう一度#formに戻り、全ての子要素から:checedになっているものを外す。
 				$('p.length').text("0");
-				myForm.find('span.alert, span.alertsex').text("");
+				myForm.find('span.alert').text("");
 				flag = 0;
 			}
 });
