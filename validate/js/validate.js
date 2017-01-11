@@ -204,7 +204,7 @@ $(document).ready(function(){
 		function addressCheck(){
 			var alertAddress = "入力必須項目です。";
 			var yourAddress = $('[name=address]').val();
-			yourAddress.replace(/(^\s+)|(\s+$)/g, '');
+			yourAddress = yourAddress.replace(/(^\s+)|(\s+$)/g, '');
 			var formatAddress = yourAddress.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);});
 			formatAddress = formatAddress.replace(/[━.*‐.*―.*－.*\–.*ー.*\-]/gi,'-');
 
