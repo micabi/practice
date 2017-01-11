@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.wrap{
+	width: 800px;
+	overflow: hidden;
+}
+
+.box{
+	padding: 5px;
+	border: 1px solid #ccc;
+	width: 25%;
+	height: 300px;
+	float: left;
+}
+
+.box h3{
+	text-align: center;
+}
+
+.box img{
+	display: block;
+	margin: 0 auto;
+}
+
+.box p{
+	margin-top: 10px;
+	font-size: 14px;
+}
