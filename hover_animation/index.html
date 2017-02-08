@@ -19,5 +19,44 @@
 		<li class="third"><a href="#" class="btn-action"><img src="http://placehold.jp/150x150.png" alt="" /></a></li>
 	</ul>
 </div><!-- /.image-wrap -->
+
+<pre>
+&lt;div class=&quot;image-wrap&quot;&gt;&#13;&#10;
+&Tab;&lt;ul&gt;&#13;&#10;&Tab;&Tab;
+&Tab;&lt;li class=&quot;first&quot;&gt;&lt;a href=&quot;https://google.co.jp&quot; class=&quot;btn-action&quot;&gt;&lt;img src=&quot;http://placehold.jp/150x150.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/li&gt;&#13;&#10;
+&Tab;&lt;li class=&quot;second&quot;&gt;&lt;a href=&quot;https://yahoo.co.jp&quot; class=&quot;btn-action&quot;&gt;&lt;img src=&quot;http://placehold.jp/150x150.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/li&gt;&#13;&#10;
+&Tab;&lt;li class=&quot;third&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;btn-action&quot;&gt;&lt;img src=&quot;http://placehold.jp/150x150.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/li&gt;&#13;&#10;
+&Tab;&lt;/ul&gt;&#13;&#10;
+&lt;/div&gt;&lt;!-- /.image-wrap --&gt;&#13;&#10;
+
+.image-wrap li.first a.btn-action img{
+	-webkit-transition: box-shadow .4s ease-in-out;
+	transition: box-shadow .4s ease-in-out;
+	box-shadow: none;
+}
+
+.image-wrap li.first a.btn-action img.animate{
+	box-shadow: 0 0 6px 6px rgba(117, 180, 196, 0.5);
+}
+
+$(document).ready(function(){
+	$('li.first').children('a.btn-action').on('mouseenter', function(e){
+		//e.preventDefault();
+		//console.log("mouseenter");
+		//console.log(this); // a
+		$(this).children('img').addClass('animate');
+	})
+	.on('mouseleave', function(e){
+		e.preventDefault();
+		//console.log("mouseleave");
+		//console.log(this); // a
+		$(this).children('img').removeClass('animate');
+	});
+
+	$('li.second').children('a.btn-action').on('click', function(e){
+		e.preventDefault();
+	});
+});
+</pre>
 </body>
 </html>
