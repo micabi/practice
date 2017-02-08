@@ -1,0 +1,53 @@
+header{
+	width: 100%;
+	padding: 10px;
+	nav{
+		background-color: #ccc;
+	}
+}
+
+a{
+	color: #ccc;
+	&:hover{
+		color: #ff0;
+	}
+	&:visited{
+		color: red;
+	}
+	&.index{
+		text-decoration: none;
+	}
+}
+
+@mixin clearfix{
+	&::after{
+		content: "";
+		clear: both;
+		height: 0;
+		font-size: 0;
+		display: block;
+	}
+}
+
+.list{
+	@include clearfix;
+}
+
+.cols2{
+	@include clearfix;
+}
+
+$primary-color: #999;
+
+body{
+	background-color: $primary-color;
+}
+
+@mixin box($width, $height){
+	width: $width;
+	height: $height;
+}
+
+.mybox{
+	@include box(200, 100);
+}
