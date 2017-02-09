@@ -1,26 +1,29 @@
-header{
+header {
 	width: 100%;
 	padding: 10px;
-	nav{
+
+	nav {
 		background-color: #ccc;
 	}
 }
 
-a{
+a {
 	color: #ccc;
-	&:hover{
+
+	&:hover {
 		color: #ff0;
 	}
-	&:visited{
+
+	&:visited {
 		color: red;
 	}
-	&.index{
+
+	&.index {
 		text-decoration: none;
 	}
 }
-
-@mixin clearfix{
-	&::after{
+@mixin clearfix {
+	&::after {
 		content: "";
 		clear: both;
 		height: 0;
@@ -29,25 +32,23 @@ a{
 	}
 }
 
-.list{
+.list {
 	@include clearfix;
 }
 
-.cols2{
+.cols2 {
 	@include clearfix;
 }
-
 $primary-color: #999;
 
-body{
+body {
 	background-color: $primary-color;
 }
-
-@mixin box($width, $height){
+@mixin box($width, $height) {
 	width: $width;
 	height: $height;
 }
 
-.mybox{
+.mybox {
 	@include box(200, 100);
 }
