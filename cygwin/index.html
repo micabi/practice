@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<title>初めてのCygwin</title>
+	<meta name="description" content="WindowsにCygwinを導入してtigを使えるようにするまでを開設。" />
+	<meta name="keywords" content="cygwin, tig, apt-cyg, インストール" />
+	<meta name="author" content="" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<div id="content">
+<h2>windowsでの導入がとっても難しかった。</h2>
+<h3>まずはCygwinをインストール</h3>
+<p><a href="https://cygwin.com/install.html" target="_blank">公式サイト</a>から32bit版ならsetup-x86.exe、64bit版ならsetup-x86_64.exeをダウンロードする。</p>
+
+<h3>apt-cygを導入してコマンドラインからcygwinのパッケージをインストール</h3>
+<p>apt-cygという、Cygwinのパッケージをコマンドラインからインストールするためのパッケージを入手する。<br />
+<a href="https://github.com/kou1okada/apt-cyg" target="_blank">https://github.com/kou1okada/apt-cyg</a>から
+zipファイルでダウンロードしてきて解凍し、C:\cygwin\usr\local\bin内にapt-cygというフォルダを作って、そこにおく。</p>
+<p>apt-cygというフォルダに実行権限0755を与える。<br />
+Cygwinを起動して、cd /cygdrive/c/cygwin/usr/local/bin/apt-cyg <br>
+chmod 0755 apt-cyg</p>
+<p>apt-cyg -m ftp://ftp.iij.ad.jp/pub/cygwin updateとしてレポジトリを国内に変更。</p>
+<h3>apt-cygを利用してtigをインストール</h3>
+<p>apt-cyg install tigを実行。</p>
+<h3>CygwinをXAMPPで使用する前提で、起動時にhtdocsを開くようにする。</h3>
+<p>環境変数のユーザー環境変数に、新規で変数名：HOME、変数値：/cygdrive/c/xampp/htdocsと設定。<br />
+もしくは、C:\cygwin\home\WATARU内にある.bashrcの末行にcd /cygdrive/c/xampp/htdocs</p>
+
+<h3>giboを導入</h3>
+<p><a href="https://github.com/simonwhitaker/gibo">gibo</a>をzipファイルでダウンロードしてくる。<br />
+C:\Users\WATARUにbinフォルダを作ってgiboの中身を入れる。</p>
+<p>ユーザー環境変数にパスC:\Users\WATARU\bin\giboを追加する。</p>
+<p>cmdプロンプトでC:\Users\WATARU\binに移動してgibo -u</p>
+<p>CygwinやMinnityでも同様にするが、時間がかかる場合がある。</p>
+
+<h3>hubを導入</h3>
+<p><a href="https://github.com/github/hub">hub</a>の下の方にある「Standalone」のcompiled binariesから最新版をダウンロードし、<br />
+解凍して、C:\Users\WATARUにbinフォルダを作ってhubの中身を入れる。</p>
+<p>そのhubフォルダの中にあるbinフォルダに対して、ユーザー環境変数にパスC:\Users\WATARU\bin\hub\binを追加する。</p>
+<p>cmdプロンプトでC:\Users\WATARU\binに移動して、gibo --version。</p>
+</div><!-- /#content -->
+</body>
+</html>

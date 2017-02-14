@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+#content {
+  width: 980px;
+  height: auto;
+  margin: 20px auto 0;
+}
+#content h2 {
+  font-size: 2.1em;
+}
+#content h3 {
+  font-size: 1.8em;
+}
+#content p {
+  font-size: 1.6em;
+}
+
+#content h4{}
+/*# sourceMappingURL=style.css.map */
