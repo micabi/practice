@@ -1,37 +1,52 @@
 header {
-  width: 100%;
-  padding: 10px; }
+    width: 100%;
+    padding: 10px;
+}
+
 header nav {
-  background-color: #ccc; }
+    background-color: #ccc;
+}
 
 a {
-  color: #ccc; }
+    color: #ccc;
+}
+
 a:hover {
-  color: #ff0; }
+    color: #ff0;
+}
+
 a:visited {
-  color: red; }
+    color: red;
+}
+
 a.index {
-  text-decoration: none; }
+    text-decoration: none;
+}
 
 .list::after {
-  content: "";
-  clear: both;
-  height: 0;
-  font-size: 0;
-  display: block; }
+    content: "";
+    clear: both;
+    height: 0;
+    font-size: 0;
+    display: block;
+}
 
 .cols2::after {
-  content: "";
-  clear: both;
-  height: 0;
-  font-size: 0;
-  display: block; }
+    content: "";
+    clear: both;
+    height: 0;
+    font-size: 0;
+    display: block;
+}
 
 body {
-  background-color: #999; }
+    background-color: #999;
+}
 
 .mybox {
-  width: 200;
-  height: 100; }
+    width: 200;
+    height: 100;
+}
+
 
 /*# sourceMappingURL=style.css.map */
