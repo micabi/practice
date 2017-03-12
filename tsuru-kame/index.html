@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<title>鶴亀算</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="tsuru_kame.js"></script>
+</head>
+<body>
+	<h2>鶴亀算</h2>
+<blockquote>
+	<p>鶴と亀がいます。今、鶴と亀の頭の合計は16匹です。また脚の合計は44本です。<br />
+	鶴と亀はそれぞれ何匹でしょうか？</p>
+</blockquote>
+<p>鶴1匹の脚の数は<input type="text" value="" size="2" id="one" />本です。<span id="ans1"></span></p>
+<p>亀1匹の脚の数は<input type="text" value="" size="2" id="two" />本です。<span id="ans2"></span></p>
+<p>これを仮に鶴と同じ数とします。つまり亀1匹の脚の数を<input type="text" value="" size="2" />本とします。<span id="ans3"></span>（亀が前脚を引っ込めたと想像します）</p>
+<p>その状態で単純に頭数で脚の数をかぞえると16 x <input type="text" value="" size="2" /> = <input type="text" value="" size="2" />（本）</p>
+<p>実際の脚の数は44本なので、その差は44 - <input type="text" value="" size="2" /> = <input type="text" value="" size="2" />（本）</p>
+<p>この本数の差は先ほど亀に引っこめてもらった脚の数である。</p>
+<p>亀の前脚は<input type="text" value="" size="2" />本なので、脚の本数を亀の前脚で割った数が亀の数である。</p>
+<p><input type="text" value="" size="2" />÷<input type="text" value="" size="2" />= <input type="text" value="" size="2" />（亀の数）</p>
+<p>鶴 + 亀 = 16なので16 - <input type="text" value="" size="2" /> = <input type="text" value="" size="2" />（鶴の数）</p>
+
+<div class="result"></div><!-- /.result -->
+</body>
+</html>
