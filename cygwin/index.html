@@ -27,6 +27,12 @@
 	<p>apt-cygという、Cygwinのパッケージをコマンドラインからインストールするためのパッケージを入手する。<br />
 	<a href="https://github.com/kou1okada/apt-cyg" target="_blank">https://github.com/kou1okada/apt-cyg</a>から
 	zipファイルでダウンロードしてきて解凍し、C:\cygwin\usr\local\bin内にapt-cygというフォルダを作って、そこにおく。</p>
+	<p>もしくは、cd /cygdrive/c/cygwin に移動して<br>
+	git clone https://github.com/rcmdnk/apt-cyg.git するか<br>
+	wget https://raw.github.com/kou1okada/apt-cyg/master/apt-cyg する。<br>
+	そうするとcygwinディレクトリにapt-cygというファイルがダウンロードされるので、<br />
+  cp apt-cyg/apt-cyg /bin/ (apt-cygというファイルをbinディレクトリの中にapt-cygというファイル名でコピー)<br>
+  chmod 775 /bin/apt-cyg</p>
 	<p>apt-cygというフォルダに実行権限0755を与える。<br />
 	Cygwinを起動して、cd /cygdrive/c/cygwin/usr/local/bin/apt-cyg <br>
 	chmod 0755 apt-cyg</p>
