@@ -19,7 +19,9 @@
 <h2>windowsでのtig導入がとっても難しかった。</h2>
 <section>
 	<h3>まずはCygwinをインストール</h3>
-	<p><a href="https://cygwin.com/install.html" target="_blank">公式サイト</a>から32bit版ならsetup-x86.exe、64bit版ならsetup-x86_64.exeをダウンロードする。</p>
+	<p><a href="https://cygwin.com/install.html" target="_blank">公式サイト</a>から32bit版ならsetup-x86.exe、64bit版ならsetup-x86_64.exeをダウンロードする。<br />
+	もしくはchocolateyを使っても良い（chocolateyはcmd.exeを管理者として実行すること）<br />
+	setup.exeでwget, tar, gawk, xz, bzip2をインストールしておく。</p>
 </section>
 
 <section>
@@ -65,6 +67,17 @@
 	解凍して、C:\Users\ユーザー名にbinフォルダを作ってhubの中身を入れる。</p>
 	<p>そのhubフォルダの中にあるbinフォルダに対して、ユーザー環境変数にパスC:\Users\ユーザー名\bin\hub\binを追加する。</p>
 	<p>cmdプロンプトでC:\Users\ユーザー名\binに移動して、gibo --version。</p>
+</section>
+
+<section>
+	<h3>Cygwinでgitを使うには</h3>
+	<p>github.comに登録する必要がある。</p>
+</section>
+
+<section>
+	<h3>Cygwinでapmを使うには</h3>
+	<p>.bashrcにalias atom='atom.cmd' <br>
+alias apm='apm.cmd'を追加記述</p>
 </section>
 </div><!-- /#content -->
 </body>
