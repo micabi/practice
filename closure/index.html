@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<title>クロージャー</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<link rel="stylesheet" href="" />
+	<script type="text/javascript">
+		window.onload = function(){
+/* 即時関数
+			(function(){
+				alert("実行");
+			}());
+*/
+
+
+			function func01(){
+				var x = 0;
+				return func02; // 内側にある関数を返すことで外側の関数に格納する（外側の関数はグローバル関数なので中のローカル変数は破棄されない）
+
+				function func02(){
+					x = x + 1;
+					return x;
+				}
+
+			}
+
+			console.log(func01());
+			var func03 = func01(); // func03はfunc02そのもの。つまりvar x = 0は参照しに行かない。
+
+			console.log(func03());
+			console.log(func03());
+			console.log(func03());
+
+/*
+	var x = "Global01";
+	var y = "Global02";
+
+	function outerFunc(){
+		var x = "Local Outer";
+
+		function innerFunc(){
+			console.log(x); // localOuter
+			console.log(y); // Global02
+			console.log(z);
+		} // end of innerFunc()
+
+		console.log(x); // Local Outer
+		innerFunc();
+	} // end of outerFunc()
+
+	console.log(x); // Global01
+	outerFunc();
+*/
+		};
+	</script>
+</head>
+<body>
+
+</body>
+</html>
