@@ -1,0 +1,34 @@
+@charset "UTF-8";
+html, body{background-color: #fff;}
+h2{
+	font-family: 'Hiragino Kaku Gothic Pro',YuGothic,Meiryo,'Lucida Grande',Verdana,Helvetica,Arial,'MS PGothic',sans-serif;
+	font-size: 24px;
+	border-left: 10px solid blue;
+	padding-left: 20px;
+	margin-left: 10px;
+	position: relative;
+}
+
+h2::before{
+	content: "";
+	display: block;
+	width: 10px;
+	height: 1.5em;
+	background-color: lightblue;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+h2::after{
+	content: "";
+	display: block;
+	width: 10px;
+	height: 1.5em;
+	background-color: darkblue;
+	position: absolute;
+	top: 0;
+	left: -20px;
+}
+
+
