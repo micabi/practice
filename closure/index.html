@@ -20,7 +20,7 @@
 			}());
 */
 
-
+/*
 			function func01(){
 				var x = 0;
 				return func02; // 内側にある関数を返すことで外側の関数に格納する（外側の関数はグローバル関数なので中のローカル変数は破棄されない）
@@ -36,9 +36,7 @@
 			var func03 = func01(); // func03はfunc02そのもの。つまりvar x = 0は参照しに行かない。
 
 			console.log(func03());
-			console.log(func03());
-			console.log(func03());
-
+*/
 /*
 	var x = "Global01";
 	var y = "Global02";
@@ -59,7 +57,24 @@
 	console.log(x); // Global01
 	outerFunc();
 */
-		};
+
+function add1(){
+	var x = 0;
+	return add2; // 関数の結果ではなく関数を返す。
+
+	function add2(){
+		x++;
+		return x;
+	}
+}
+
+console.log(add1());
+
+var add3 = add1();
+console.log(add3());
+console.log(add3());
+console.log(add3());
+};
 	</script>
 </head>
 <body>
