@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 function Modal(element){ // コンストラクタ
-	this.initialize(element);
+	this.initialize(element); // イニシャライズメソッドから継承する
 }
 
  // 要素の取得
@@ -15,24 +15,24 @@ Modal.prototype.initialize = function(element){
 	this.$overlay = $('#modal-overlay');
 	this.$window = $(window);
 	this.index = 0;
-	this.handleEvents();
+	this.handleEvents(); // クリックメソッドから継承する
 };
 
  // クリックイベント
 Modal.prototype.handleEvents = function(){
 	var self = this;
 	this.$element.on("click", function(e){
-		self.show(e);
+		self.show(e); // showメソッドから継承する
 		return false;
 	});
 
 	this.$close.on("click", function(e){
-		self.hide(e);
+		self.hide(e); // hideメソッドから継承する
 		return false;
 	});
 
 	this.$overlay.on("click", function(e){
-		self.hide(e);
+		self.hide(e); // hideメソッドから継承する
 		return false;
 	});
 };
