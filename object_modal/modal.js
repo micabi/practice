@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 function Modal(element){ // コンストラクタ
 	this.initialize(element); // イニシャライズメソッドから継承する
-}
+} // elementは#modal-thums a
 
  // 要素の取得
 Modal.prototype.initialize = function(element){
