@@ -18,21 +18,24 @@
 	<script>
 		window.onload = function(){
 
-			var tag = document.getElementById('title'); // <h1>...</h1>
-			title.innerHTML = "";
+			var tag = document.getElementById('header').children; // <h1>...</h1>
+			//console.log(tag[0].innerHTML); // タイトル
+			tag[0].innerHTML = "";
+
 			var a = document.createElement('a'); // aタグを生成
 			a.setAttribute('href', 'https://www.google.co.jp'); // aタグに属性と値をセット
-			var content = document.createTextNode('Google'); //aタグの中身を生成
+			var content = document.createTextNode("Google"); //aタグの中身を生成
 			a.appendChild(content); // aタグの中身をセット
-			title.appendChild(a);
+			tag[0].appendChild(a);
 
+			// childNodes[]は空白ノードや改行も取る。childrenは取らない。
 
 		};
 	</script>
 </head>
 <body>
 	<div id="header">
-		<h1 id="title">タイトル</h1>
+		<h1>タイトル</h1>
 	</div><!-- /#header -->
 </body>
 </html>
