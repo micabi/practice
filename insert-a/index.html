@@ -17,7 +17,7 @@
 		window.onload = function(){
 
 			var tag = document.getElementById('header').children; // <h1>...</h1>
-			console.log(tag[0].nodeName);
+			console.log(tag[0].nodeName); // nodeName, nodeType
 			tag[0].innerHTML = "";
 
 			var a = document.createElement('a'); // aタグを生成
@@ -27,14 +27,14 @@
 			a.appendChild(content); // aタグの中身をセット
 			//tag[0].appendChild(a);
 
-			var altImg = document.createElement('img');
+			var altImg = document.createElement('img'); // imgタグを生成
 			//console.log(altImg);
-			altImg.setAttribute('src', 'http://placehold.jp/150x150.png');
-			altImg.setAttribute('alt', 'ダミー画像');
-			tag[0].appendChild(altImg);
+			altImg.setAttribute('src', 'http://placehold.jp/150x150.png'); //imgタグに属性をセット
+			altImg.setAttribute('alt', 'ダミー画像'); //imgタグに属性をセット
+			tag[0].appendChild(altImg); // imgタグをh1の間に挿入
 
 			// childNodes[]は空白ノードや改行も取る。childrenは取らない。
-
+			// また、いずれも配列で取得するため、取り出しには[]が必要。
 		};
 	</script>
 </head>
