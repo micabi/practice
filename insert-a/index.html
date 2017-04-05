@@ -11,22 +11,27 @@
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="expires" content="0" />
-	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.ico" />
-	<link rel="apple-touch-icon-precomposed" href="/favicon-152.png" />
 	<link rel="stylesheet" href="" />
 	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
 		window.onload = function(){
 
 			var tag = document.getElementById('header').children; // <h1>...</h1>
-			//console.log(tag[0].innerHTML); // タイトル
+			console.log(tag[0].nodeName);
 			tag[0].innerHTML = "";
 
 			var a = document.createElement('a'); // aタグを生成
 			a.setAttribute('href', 'https://www.google.co.jp'); // aタグに属性と値をセット
 			var content = document.createTextNode("Google"); //aタグの中身を生成
+
 			a.appendChild(content); // aタグの中身をセット
-			tag[0].appendChild(a);
+			//tag[0].appendChild(a);
+
+			var altImg = document.createElement('img');
+			//console.log(altImg);
+			altImg.setAttribute('src', 'http://placehold.jp/150x150.png');
+			altImg.setAttribute('alt', 'ダミー画像');
+			tag[0].appendChild(altImg);
 
 			// childNodes[]は空白ノードや改行も取る。childrenは取らない。
 
